@@ -3,6 +3,10 @@ Hook the Javascript confirm dialog and use BootstrapDialog
 
 A quick-and-dirty way to grab the data-confirm action and put it in a Bootstrap-friendly dialog.  Uses BootstrapDialog, but just as easily could have used a standard Bootstrap modal.
 
+This snippet makes use of Nakupanda's Bootstrap3-Dialog, which is required, and available here
+
+https://github.com/nakupanda/bootstrap3-dialog
+
 
 Helpers might be good:  
 ```
