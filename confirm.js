@@ -1,4 +1,4 @@
-//  Over-ride the default javascript data-confirm dialog
+//  Override the default Javascript data-confirm dialog
 $.rails.allowAction = function(link){
   if (link.data("confirm") == undefined){
     return true;
@@ -11,8 +11,8 @@ $.rails.confirmed = function(link){
   link.trigger("click.rails");
 }
 $.rails.showConfirmationDialog = function(link){
-  var message = link.data("confirm");
-  var title = link.data("confirm-title");
+  var message = link.data("confirm") || "Are you sure?";
+  var title = link.data("confirm-title") || "Confirm?";
   var type = link.data("confirm-modal-class");
   var url = link.attr("href");
   var method = link.data("method");
@@ -23,7 +23,7 @@ $.rails.showConfirmationDialog = function(link){
     type: type,
     buttons: [
       {
-        label: link.data("confirm-proceed"),
+        label: link.data("confirm-proceed") || "OK",
         cssClass: link.data("confirm-proceed-class"),
         action: function(dialogItself)
         {
@@ -38,7 +38,7 @@ $.rails.showConfirmationDialog = function(link){
         }
       },
       {
-        label: link.data("confirm-cancel"),
+        label: link.data("confirm-cancel") || "Cancel",
         cssClass: link.data("confirm-cancel-class"),
         action: function(dialogItself)
         {
