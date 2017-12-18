@@ -1,4 +1,4 @@
-//Override the default confirm dialog by rails
+//  Over-ride the default javascript data-confirm dialog
 $.rails.allowAction = function(link){
   if (link.data("confirm") == undefined){
     return true;
@@ -6,12 +6,10 @@ $.rails.allowAction = function(link){
   $.rails.showConfirmationDialog(link);
   return false;
 }
-//User click confirm button
 $.rails.confirmed = function(link){
   link.data("confirm", null);
   link.trigger("click.rails");
 }
-//Display the confirmation dialog
 $.rails.showConfirmationDialog = function(link){
   var message = link.data("confirm");
   var title = link.data("confirm-title");
